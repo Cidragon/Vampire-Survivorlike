@@ -1,15 +1,19 @@
 extends Node2D
 
-@onready var player: Player = %Player
-@onready var enemy_manager: Node2D = %enemy_manager
+@export var enemy_scene : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.player = player
-	Global.enemy_manager = enemy_manager
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_timer_timeout() -> void:
+	var new_enemy = enemy_scene.instantiate()
+	new_enemy.position = position
+	Global.enemy_manager.add_child(new_enemy)
+	pass # Replace with function body.
