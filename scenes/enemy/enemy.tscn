@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7fcg5nnlvou3"]
+[gd_scene load_steps=4 format=3 uid="uid://c7fcg5nnlvou3"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_cvjb5"]
 [ext_resource type="Texture2D" uid="uid://62isdra72j5e" path="res://icon.svg" id="1_id1v8"]
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vobuj"]
+radius = 40.0
+height = 120.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+motion_mode = 1
 script = ExtResource("1_cvjb5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.278431, 0.290196, 0.313726, 1)
 texture = ExtResource("1_id1v8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_vobuj")

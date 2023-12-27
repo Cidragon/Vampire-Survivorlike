@@ -25,3 +25,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		accumulator.x += speed
 		
 	velocity = accumulator
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		print("got hit by enemy")
+		body.queue_free()
