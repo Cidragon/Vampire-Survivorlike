@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed : int = 100
+const speed : int = 50
 
 func _ready() -> void:
 	velocity = Vector2(speed,speed)

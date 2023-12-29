@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd1dsosblp0j0"]
+[gd_scene load_steps=7 format=3 uid="uid://cd1dsosblp0j0"]
 
 [ext_resource type="PackedScene" uid="uid://rxbwu6hobf58" path="res://scenes/player/player.tscn" id="1_10q0s"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_ma1dy"]
-[ext_resource type="PackedScene" uid="uid://c7fcg5nnlvou3" path="res://scenes/enemy/enemy.tscn" id="2_e75q0"]
 [ext_resource type="Texture2D" uid="uid://bprm6431rgubd" path="res://assets/background-world.png" id="3_4dhup"]
 [ext_resource type="PackedScene" uid="uid://bk31k7k5ogw0r" path="res://scenes/spawn_point/spawn_point.tscn" id="5_83hns"]
 
@@ -62,10 +61,10 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 4, 65537, 65536, 4, 65538, 65536,
 
 [node name="Player" parent="." instance=ExtResource("1_10q0s")]
 unique_name_in_owner = true
-position = Vector2(697, 449)
+position = Vector2(670, 450)
 
-[node name="Enemy" parent="." instance=ExtResource("2_e75q0")]
-position = Vector2(98, 295)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
 
 [node name="Spawner" type="Marker2D" parent="."]
 

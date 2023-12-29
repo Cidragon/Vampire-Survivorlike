@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://62isdra72j5e" path="res://icon.svg" id="1_id1v8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vobuj"]
-radius = 20.0
-height = 120.0
+radius = 3.0
+height = 13.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 motion_mode = 1
@@ -13,8 +13,7 @@ script = ExtResource("1_cvjb5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.278431, 0.290196, 0.313726, 1)
-position = Vector2(0.500001, 0.500002)
-scale = Vector2(0.304688, 0.929688)
+scale = Vector2(0.05, 0.1)
 texture = ExtResource("1_id1v8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
