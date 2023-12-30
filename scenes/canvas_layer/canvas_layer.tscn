@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dimji10p2wme6"]
+
+[ext_resource type="Script" path="res://scenes/canvas_layer/ProgressBar.gd" id="1_yy5yk"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -147.0
+offset_top = 10.0
+offset_right = 147.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+custom_minimum_size = Vector2(750, 30)
+layout_mode = 2
+max_value = 30.0
+step = 1.0
+script = ExtResource("1_yy5yk")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "0/30"

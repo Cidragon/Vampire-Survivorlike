@@ -4,6 +4,7 @@ class_name Player
 const speed : int = 200
 @export var arrow : PackedScene
 
+var xp : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,7 +24,7 @@ func _process(delta: float) -> void:
 		new_arrow.direction = target_position
 		new_arrow.position = position
 		new_arrow.rotation_degrees = rad_to_deg(position.angle_to_point(mouse_position))
-		print(new_arrow.rotation_degrees)
+		#print(new_arrow.rotation_degrees)
 		get_tree().get_root().add_child(new_arrow)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -43,8 +44,16 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
-		print("got hit by enemy")
-		body.queue_free()
+		#print("got hit by enemy")
+		body.die()
 
 func get_tan() -> float:
 	return 0
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("xp"):
+		xp += area.xp
+		Signals.update_xp_bar.emit(xp)
+		area.queue_free()
+		print(xp)

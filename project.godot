@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://singleton/global.gd"
+Signals="*res://singleton/signals.gd"
 
 [display]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7fcg5nnlvou3"]
+[gd_scene load_steps=5 format=3 uid="uid://c7fcg5nnlvou3"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_cvjb5"]
 [ext_resource type="Texture2D" uid="uid://62isdra72j5e" path="res://icon.svg" id="1_id1v8"]
+[ext_resource type="PackedScene" uid="uid://36s2nyhyc4xe" path="res://scenes/loot/xp/xp_bag.tscn" id="2_ulgsx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vobuj"]
 radius = 3.0
@@ -10,6 +11,7 @@ height = 13.0
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 motion_mode = 1
 script = ExtResource("1_cvjb5")
+xp_bag_scene = ExtResource("2_ulgsx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.278431, 0.290196, 0.313726, 1)
